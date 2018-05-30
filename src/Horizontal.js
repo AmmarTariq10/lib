@@ -10,10 +10,13 @@ import {
   Text,
   Platform
 } from "react-native";
-const { width, height } = Dimensions.get("window");
+const  w = Dimensions.get("window").width;
+const  h = Dimensions.get("window").height;
 
-const PESPECTIVE = Platform.OS === "ios" ? 2.38 : 1.7;
-const TR_POSITION = Platform.OS === "ios" ? 2 : 1.5;
+const height = h/2-30
+const width = w-30
+const PESPECTIVE = Platform.OS === "ios" ? 2.38 : 1.8;
+const TR_POSITION = Platform.OS === "ios" ? 2 : 1.7;
 
 export default class CubeNavigationHorizontal extends React.Component {
   constructor(props) {
@@ -119,7 +122,7 @@ export default class CubeNavigationHorizontal extends React.Component {
 
     let rotateY = scrollX.interpolate({
       inputRange: [pageX - width, pageX, pageX + width],
-      outputRange: ["-60deg", "0deg", "60deg"],
+      outputRange: ["-45deg", "0deg", "45deg"],
       extrapolate: "clamp"
     });
 
@@ -127,17 +130,17 @@ export default class CubeNavigationHorizontal extends React.Component {
       inputRange: [pageX - width, pageX, pageX + width],
       inputRange: [
         pageX - width,
-        pageX - width + 0.1,
+        pageX - width + 0.5,
         pageX,
-        pageX + width - 0.1,
+        pageX + width - 0.5,
         pageX + width
       ],
       outputRange: [
-        -width - 1,
-        (-width - 1) / PESPECTIVE,
+        -width ,
+        (-width ) / PESPECTIVE,
         0,
-        (width + 1) / PESPECTIVE,
-        +width + 1
+        (width ) / PESPECTIVE,
+        +width
       ],
       extrapolate: "clamp"
     });
@@ -145,12 +148,12 @@ export default class CubeNavigationHorizontal extends React.Component {
     let opacity = scrollX.interpolate({
       inputRange: [
         pageX - width,
-        pageX - width + 10,
+        pageX - width + 250,
         pageX,
         pageX + width - 250,
         pageX + width
       ],
-      outputRange: [0, 0.6, 1, 0.6, 0],
+      outputRange: [0, 1, 1, 1, 0],
       extrapolate: "clamp"
     });
 
@@ -167,7 +170,7 @@ export default class CubeNavigationHorizontal extends React.Component {
 
   _renderChild = (child, i) => {
     let expandStyle = this.props.expandView
-      ? { paddingTop: 100, paddingBottom: 100, height: height + 200 }
+      ? { paddingTop: 100, paddingBottom: 100, height: height + 100 }
       : { width, height };
     let style = [child.props.style, expandStyle];
     let props = {
@@ -208,7 +211,7 @@ export default class CubeNavigationHorizontal extends React.Component {
 
   render() {
     let expandStyle = this.props.expandView
-      ? { top: -100, left: 0, width, height: height + 200 }
+      ? { top: 0, left: 0, width, height: height + 100 }
       : { width, height };
 
     return (
@@ -221,7 +224,7 @@ export default class CubeNavigationHorizontal extends React.Component {
       >
         <Animated.View
           style={[
-            { backgroundColor: "#000", position: "absolute", width, height },
+            { backgroundColor: "transparent", position: "absolute", width, height },
             expandStyle
           ]}
         >

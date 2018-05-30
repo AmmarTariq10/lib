@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { PanResponder, Animated, Dimensions, StyleSheet, Image, View, Text } from 'react-native';
-const { width, height } = Dimensions.get('window');
+import { PanResponder, Animated, Dimensions, StyleSheet, Image, View, Text,Platform } from 'react-native';
 
-export default class CubeNavigationVertical extends React.Component {
+const window = Dimensions.get('window');
+const width = window.width -30
+const height = window.height/2 -30
+
+
+const PESPECTIVE = Platform.OS === "ios" ? 2.38 : 1.54;
+const TR_POSITION = Platform.OS === "ios" ? 2 : 2;
+
+export default class CubeNavigationVertical extends Component {
 	constructor(props) {
 		super(props);
-
-		this.pages = this.props.children.map((child, index) => height * -index);
-
-		this.state = {
+	
+   this.pages = this.props.children.map((child, index) => height * -index);
+    		this.state = {
 			scrollLockPage: this.pages[this.props.scrollLockPage],
 		};
+
 	}
 
-	componentWillMount() {
+  componentWillMount() {
+ 
 		this._animatedValue = new Animated.ValueXY();
 		this._animatedValue.setValue({ x: 0, y: 0 });
 		this._value = { x: 0, y: 0 };
@@ -69,9 +77,6 @@ export default class CubeNavigationVertical extends React.Component {
 		});
 	}
 
-	/*
-    @page: index
-  */
 	scrollTo(page, animated) {
 		animated = animated ? true : false;
 
@@ -79,16 +84,12 @@ export default class CubeNavigationVertical extends React.Component {
 			Animated.spring(this._animatedValue, {
 				toValue: { x: 0, y: this.pages[page] },
 				friction: 4,
-				tension: 0.8,
+				tension: 1,
 			}).start();
 		} else {
 			this._animatedValue.setValue({ x: 0, y: this.pages[page] });
 		}
 	}
-
-	/*
-  Private methods
-  */
 
 	_getTransformsFor = i => {
 		let scrollY = this._animatedValue.y;
@@ -96,32 +97,32 @@ export default class CubeNavigationVertical extends React.Component {
 
 		let translateY = scrollY.interpolate({
 			inputRange: [pageY - height, pageY, pageY + height],
-			outputRange: [(-height - 1) / 2, 0, (height + 1) / 2],
+			outputRange: [(-height-1) / TR_POSITION, 0, (height+1) / TR_POSITION],
 			extrapolate: 'clamp',
 		});
 
 		let rotateX = scrollY.interpolate({
 			inputRange: [pageY - height, pageY, pageY + height],
-			outputRange: ['60deg', '0deg', '-60deg'],
+			outputRange: ['45deg', '0deg', '-45deg'],
 			extrapolate: 'clamp',
 		});
 
 		let translateYAfterRotate = scrollY.interpolate({
 			inputRange: [pageY - height, pageY, pageY + height],
-			inputRange: [pageY - height, pageY - height + 0.1, pageY, pageY + height - 0.1, pageY + height],
-			outputRange: [-height - 1, (-height - 1) / 2.38, 0, (height + 1) / 2.38, +height + 1],
+			inputRange: [pageY - height, pageY - height+0.5, pageY, pageY + height-0.5, pageY + height],
+			outputRange: [-height, (-height)/PESPECTIVE, 0, (height)/PESPECTIVE , +height],
 			extrapolate: 'clamp',
 		});
 
 		let opacity = scrollY.interpolate({
 			inputRange: [pageY - height, pageY - height + 100, pageY, pageY + height - 100, pageY + height],
-			outputRange: [0, 0.6, 1, 0.6, 0],
+			outputRange: [0, 1, 1, 1, 0],
 			extrapolate: 'clamp',
 		});
 
 		return {
 			transform: [
-				{ perspective: height },
+				{ perspective: height},
 				{ translateY },
 				{ rotateX: rotateX },
 				{ translateY: translateYAfterRotate },
@@ -132,7 +133,7 @@ export default class CubeNavigationVertical extends React.Component {
 
 	_renderChild = (child, i) => {
 		let expandStyle = this.props.expandView
-			? { paddingRight: 100, paddingLeft: 100, width: width + 200, height }
+			? {  width: width, height }
 			: { width, height };
 		let style = [child.props.style, expandStyle];
 		let props = {
@@ -166,7 +167,7 @@ export default class CubeNavigationVertical extends React.Component {
 
 	render() {
 		let expandStyle = this.props.expandView
-			? { top: 0, left: -100, width: width + 200, height }
+			? {  width: width, height }
 			: { width, height };
 
 		return (
@@ -177,7 +178,7 @@ export default class CubeNavigationVertical extends React.Component {
 				}}
 				{...this._panResponder.panHandlers}
 			>
-				<Animated.View style={[{ backgroundColor: '#000', position: 'absolute', width, height }, expandStyle]}>
+				<Animated.View style={[{ backgroundColor: 'transparent', position: 'absolute', width, height }, expandStyle]}>
 					{this.props.children.map(this._renderChild)}
 				</Animated.View>
 			</Animated.View>

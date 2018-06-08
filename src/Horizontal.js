@@ -51,13 +51,13 @@ export default class CubeNavigationHorizontal extends React.Component {
         Animated.event([null, { dx: this._animatedValue.x }])(e, gestureState);
 
         // Avoid last movement
-        this.lockLast =
-          this.state.scrollLockPage != undefined
-            ? -this.state.scrollLockPage
-            : this.pages[this.pages.length - 1];
-        if (this._value.x > this.pages[0] || this._value.x < this.lockLast) {
-          this._animatedValue.setValue({ x: 0, y: 0 });
-        }
+        // this.lockLast =
+        //   this.state.scrollLockPage != undefined
+        //     ? -this.state.scrollLockPage
+        //     : this.pages[this.pages.length - 1];
+        // if (this._value.x > this.pages[0] || this._value.x < this.lockLast) {
+        //   this._animatedValue.setValue({ x: 0, y: 0 });
+        // }
       },
       onPanResponderRelease: (e, gestureState) => {
         if (Math.abs(gestureState.dx) > 5) {
@@ -105,27 +105,19 @@ export default class CubeNavigationHorizontal extends React.Component {
       this._animatedValue.setValue({ x: this.pages[page], y: 0 });
     }
   }
-
-  /*
-  Private methods
-  */
-
   _getTransformsFor = i => {
     let scrollX = this._animatedValue.x;
     let pageX = -width * i;
-
     let translateX = scrollX.interpolate({
       inputRange: [pageX - width, pageX, pageX + width],
       outputRange: [(-width - 1) / TR_POSITION, 0, (width + 1) / TR_POSITION],
       extrapolate: "clamp"
     });
-
     let rotateY = scrollX.interpolate({
       inputRange: [pageX - width, pageX, pageX + width],
       outputRange: ["-45deg", "0deg", "45deg"],
       extrapolate: "clamp"
     });
-
     let translateXAfterRotate = scrollX.interpolate({
       inputRange: [pageX - width, pageX, pageX + width],
       inputRange: [
@@ -144,7 +136,6 @@ export default class CubeNavigationHorizontal extends React.Component {
       ],
       extrapolate: "clamp"
     });
-
     let opacity = scrollX.interpolate({
       inputRange: [
         pageX - width,
@@ -156,7 +147,6 @@ export default class CubeNavigationHorizontal extends React.Component {
       outputRange: [0, 1, 1, 1, 0],
       extrapolate: "clamp"
     });
-
     return {
       transform: [
         { perspective: width },
@@ -167,7 +157,6 @@ export default class CubeNavigationHorizontal extends React.Component {
       opacity: opacity
     };
   };
-
   _renderChild = (child, i) => {
     let expandStyle = this.props.expandView
       ? { paddingTop: 100, paddingBottom: 100, height: height + 100 }

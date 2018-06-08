@@ -1,41 +1,19 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "react-native-3dcube-navigation@^1.0.3",
-        "scope": null,
-        "escapedName": "react-native-3dcube-navigation",
-        "name": "react-native-3dcube-navigation",
-        "rawSpec": "^1.0.3",
-        "spec": ">=1.0.3 <2.0.0",
-        "type": "range"
-      },
-      "D:\\react projects\\anim"
-    ]
-  ],
-  "_from": "react-native-3dcube-navigation@>=1.0.3 <2.0.0",
+  "_from": "react-native-3dcube-navigation@^1.0.3",
   "_id": "react-native-3dcube-navigation@1.0.3",
-  "_inCache": true,
+  "_inBundle": false,
+  "_integrity": "sha512-j7TGWLJLPpe7hGoCXjGBF7ZMnK8M1s/UKPIBqAIQ8O3/GhT5Sq59sf6EL6yOIBpzPZTskcOEZcUaOYaZ29y49Q==",
   "_location": "/react-native-3dcube-navigation",
-  "_nodeVersion": "8.9.3",
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/react-native-3dcube-navigation_1.0.3_1524772791041_0.3778273579431173"
-  },
-  "_npmUser": {
-    "name": "zehfernandes",
-    "email": "ozehfernandes@gmail.com"
-  },
-  "_npmVersion": "5.6.0",
   "_phantomChildren": {},
   "_requested": {
+    "type": "range",
+    "registry": true,
     "raw": "react-native-3dcube-navigation@^1.0.3",
-    "scope": null,
-    "escapedName": "react-native-3dcube-navigation",
     "name": "react-native-3dcube-navigation",
+    "escapedName": "react-native-3dcube-navigation",
     "rawSpec": "^1.0.3",
-    "spec": ">=1.0.3 <2.0.0",
-    "type": "range"
+    "saveSpec": null,
+    "fetchSpec": "^1.0.3"
   },
   "_requiredBy": [
     "#USER",
@@ -43,33 +21,23 @@
   ],
   "_resolved": "https://registry.npmjs.org/react-native-3dcube-navigation/-/react-native-3dcube-navigation-1.0.3.tgz",
   "_shasum": "f2b89b746b8058510fea959828b8f7a0b413acdb",
-  "_shrinkwrap": null,
   "_spec": "react-native-3dcube-navigation@^1.0.3",
-  "_where": "D:\\react projects\\anim",
+  "_where": "D:\\react projects\\G7",
   "author": {
     "name": "Zeh Fernandes"
   },
   "bugs": {
     "url": "https://github.com/zehfernandes/react-native-3dcube-navigation/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "react": "^16.2.0"
   },
+  "deprecated": false,
   "description": "3D cube navigation JS",
-  "devDependencies": {},
-  "directories": {},
-  "dist": {
-    "integrity": "sha512-j7TGWLJLPpe7hGoCXjGBF7ZMnK8M1s/UKPIBqAIQ8O3/GhT5Sq59sf6EL6yOIBpzPZTskcOEZcUaOYaZ29y49Q==",
-    "shasum": "f2b89b746b8058510fea959828b8f7a0b413acdb",
-    "tarball": "https://registry.npmjs.org/react-native-3dcube-navigation/-/react-native-3dcube-navigation-1.0.3.tgz",
-    "fileCount": 7,
-    "unpackedSize": 22444,
-    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa4i+4CRA9TVsSAnZWagAAd2kP/A1osYwfofXcg2LD7AYo\nm36jaegt6Lbke1EAQnPpmRvlTIKuysN2xIP/txtaA4yQfbYNwirODZ+udoK4\nam1pTf9lRPBjUSEaBoXHcH44tlqatQR5008ItzcDoTa0+o+0U3/e+uMzKWNZ\nYR1MXpLg4g4IaIjsfZq+Q/c0anOuHLIalirMRia0mX7yHnw8t8CeKM6UAzqQ\n72wsxt14216ZeJ0uear79a5CRL4kTht2oLCSvPPrde/zHFdIjBHCXOR9vBD/\nhCZ4sJBTN12sLoN8wPn2vtLkrrmmhCxWujbGphHOxY42AGWRG+1PMuhs0eja\n7xK8PNxvxpu+UFRAvZwkJahJ6ekiTgLvUGVcj1bLm/hN4xR7+nxFD7Gp4sIQ\nMIGuzNPniCbEAeD/ZkWFCj9Ma6chhc8IbRVKkBNyoSc2O+Q7AMa6kuxYtebm\nBygeTAQ0vquQuAu8otwSCDQ/au6HRKItdVR91+T9IfmYjUoZeAejVjDdkOT4\nGqfAirYybXmKWGeHV07M2wi3HFM43dMZ48/2EhYEkpVpKqYg7MOhv9t0veAN\n+w+57SV2WYhOe91W0XG3F774EW7nST/mJkjv2o0rpmCzHGZq4XILmrLFhUDg\nLO4YA3wbwg+dXtctNg5iq0R/Z9/KXIAeTXfEyLtCjAGR1lJ1jyi5mTWNWUz3\nuMkC\r\n=tbSV\r\n-----END PGP SIGNATURE-----\r\n"
-  },
   "files": [
     "src"
   ],
-  "gitHead": "b3832beaf5a44d51cec4c29f51e0efd0918c43ff",
   "homepage": "https://github.com/zehfernandes/react-native-3dcube-navigation#readme",
   "keywords": [
     "react-component",
@@ -79,16 +47,7 @@
   ],
   "license": "ISC",
   "main": "index.js",
-  "maintainers": [
-    {
-      "name": "zehfernandes",
-      "email": "ozehfernandes@gmail.com"
-    }
-  ],
   "name": "react-native-3dcube-navigation",
-  "optionalDependencies": {},
-  "readme": "<img src=\"http://www.dropbox.com/s/gku8mlgnmzqk6n6/3dcube_test.png?raw=1\" width=\"150px\" />\n\n# react-native-3dcube-navigation\n\n### Installation\n\n```bash\n$ npm i react-native-3dcube-navigation --save\n```\n\n### Demo\n\n<img src=\"http://www.dropbox.com/s/x9offjanyc9enwj/3dcube.gif?raw=1\"  />\n\n### Basic Usage\n\n##### Horizontal\n```js\nimport { CubeNavigationHorizontal } from 'react-native-3dcube-navigation'\n\n<View style={styles.father} >\n  <CubeNavigationHorizontal ref={view => { this.cube = view; }}>\n    <View style={[styles.container, { backgroundColor: '#5CDB8B' }]}>\n      <Text style={styles.text}>Horizontal Page 1</Text>\n    </View>\n    <View style={[styles.container, { backgroundColor: '#A3F989' }]}>\n      <Text style={styles.text}>Horizontal Page 2</Text>\n    </View>\n    <View style={[styles.container, { backgroundColor: '#CBF941' }]}>\n      <Text style={styles.text}>Horizontal Page 3</Text>\n    </View>\n  </CubeNavigationHorizontal>\n</View >\n```\n\n##### Vertical\n```js\nimport { CubeNavigationVertical } from 'react-native-3dcube-navigation'\n\n<View style={styles.father} >\n  <CubeNavigationVertical ref={view => { this.cube = view; }}>\n    <View style={[styles.container, { backgroundColor: '#5CDB8B' }]}>\n      <Text style={styles.text}>Vertical Page 1</Text>\n    </View>\n    <View style={[styles.container, { backgroundColor: '#A3F989' }]}>\n      <Text style={styles.text}>Vertical Page 2</Text>\n    </View>\n    <View style={[styles.container, { backgroundColor: '#CBF941' }]}>\n      <Text style={styles.text}>Vertical Page 3</Text>\n    </View>\n  </CubeNavigationVertical>\n</View >\n```\n\n### Properties\n\n| Prop  | Default  | Type | Description |\n| :------------ |:---------------:| :---------------:| :-----|\n| expandView | false | `bool` | If `true`, the view expands not showing the background |\n| scrollLockPage | null | `number` | Lock swipe to the next pages, referring the index number of the page |\n| callBackAfterSwipe | null | `function` | Callback function after release |\n\n### Methods\n\n#### scrollTo(index, animated)\n\n| Name  | Type     | default | Description |\n| :---- | :------: | :------: | :--- |\n| index | `number`   | `undefined` | Scroll to the page, start in 0. |\n| animated | `bool`   | `true` |  |\n\n### Examples\n\n```bash\n$ cd examples\n$ npm i\n$ react-native run-ios\n```\n\n<br/>\n\n> Inspired by [tlackemann](https://github.com/tlackemann/react-native-cube-transition) but implemented only with react-native libs.\n",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zehfernandes/react-native-3dcube-navigation.git"

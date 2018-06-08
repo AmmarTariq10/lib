@@ -44,13 +44,13 @@ export default class CubeNavigationVertical extends Component {
 				Animated.event([null, { dy: this._animatedValue.y }])(e, gestureState);
 
 				// Avoid last movement
-				this.lockLast =
-					this.state.scrollLockPage != undefined
-						? -this.state.scrollLockPage
-						: this.pages[this.pages.length - 1];
-				if (this._value.y > this.pages[0] || this._value.y < this.lockLast) {
-					this._animatedValue.setValue({ x: 0, y: 0 });
-				}
+				// this.lockLast =
+				// 	this.state.scrollLockPage != undefined
+				// 		? -this.state.scrollLockPage
+				// 		: this.pages[this.pages.length - 1];
+				// if (this._value.y > this.pages[0] || this._value.y < this.lockLast) {
+				// 	this._animatedValue.setValue({ x: 0, y: 0 });
+				// }
 			},
 			onPanResponderRelease: (e, gestureState) => {
 				if (Math.abs(gestureState.dy) > 20) {
